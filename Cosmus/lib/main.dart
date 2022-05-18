@@ -47,6 +47,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                 child: Text("Gráfico Pagamentos"),
               ),
             ),
+            SizedBox(height: 10),
             ButtonTheme(
               minWidth: 100.0,
               height: 50.0,
