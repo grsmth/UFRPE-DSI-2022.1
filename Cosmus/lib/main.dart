@@ -57,7 +57,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                       MaterialPageRoute(builder: (context) => MyHomePage(title: '',))
                   );
                 },
-                child: Text("Gráfico Cliesntes por estado"),
+                child: Text("Gráfico Clientes por estado"),
               ),
             )
           ],
