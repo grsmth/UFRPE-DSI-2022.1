@@ -2,11 +2,17 @@
 
 import 'package:cosmus/telaGrafico.dart';
 import 'package:flutter/material.dart';
+import 'package:cosmus/bargraph.dart';
 
 void main (){
   runApp(MaterialApp(
-    home: TelaPrincipal(),
-    debugShowCheckedModeBanner: false
+      initialRoute: '/',
+      routes: {
+        '/': (context) => TelaPrincipal(),
+        '/Screen2': (context) => MyHomePage(title: 'Flutter Demo Home Page'),
+        '/Screen3': (context) => BarChart(title: 'BarChart')
+      },
+      debugShowCheckedModeBanner: false
   ));
 }
 
@@ -35,10 +41,23 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                 onPressed: () {
                   Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MyHomePage(title: '',))
+                  MaterialPageRoute(builder: (context) => BarChart(title: '',))
                 );
                 },
-                child: Text("Gráfico"),
+                child: Text("Gráfico Pagamentos"),
+              ),
+            ),
+            ButtonTheme(
+              minWidth: 100.0,
+              height: 50.0,
+              child: RaisedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyHomePage(title: '',))
+                  );
+                },
+                child: Text("Gráfico Cliesntes por estado"),
               ),
             )
           ],

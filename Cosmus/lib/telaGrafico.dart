@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors, file_names
-
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -65,7 +64,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold (body: FutureBuilder(future: getJsonFromFirebase(), builder:(context, snapshot){
+        child: Scaffold (
+            appBar: AppBar(
+              title: const Text('Back'),
+            ),
+            body: FutureBuilder(future: getJsonFromFirebase(), builder:(context, snapshot){
       if (snapshot.hasData){
         return (SfCartesianChart(
           primaryXAxis: CategoryAxis(),
